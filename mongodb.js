@@ -1,5 +1,7 @@
 // CRUD: Create Read Update Delete
 
+// ODM: Object Document Mapper -> Mongoose is one of them
+
 // const mongodb = require('mongodb');
 
 // const ObjectID = mongodb.ObjectID;
