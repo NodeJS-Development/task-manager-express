@@ -49,6 +49,13 @@ const userSchema = new mongoose.Schema({
   }],
 });
 
+// Virtual property: not actual data stored in the db, is a relation between two entities
+userSchema.virtual('tasks', {
+  ref: 'Task',
+  localField: '_id',
+  foreignField: 'owner',
+});
+
 
 userSchema.methods.toJSON = function () {
   const user = this;
