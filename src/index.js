@@ -4,7 +4,7 @@ const userRouter = require('./routers/user');
 const taskRouter = require('./routers/task');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // Will automatically parse incoming json into an object so we can access it into our request handlers 
 app.use(express.json());
@@ -16,4 +16,4 @@ app.use(taskRouter);
 // Express setup
 app.listen(port, () => {
   console.log(`Server is up on port ${port}!`);
-})
+});
