@@ -3,7 +3,7 @@ const multer = require('multer');
 const sharp = require('sharp');
 const User = require('../models/user');
 const auth = require('../middleware/auth');
-const { sendWelcomeEmail } = require('../emails/account');
+const { sendWelcomeEmail, sendCancellationEmail } = require('../emails/account');
 
 const router = new express.Router();
 
@@ -113,6 +113,7 @@ router.delete('/users/me', auth, async (req, res) => {
   try {
 
     await req.user.remove();
+    sendCancellationEmail(req.user.email, req.user.name);
 
     res.send(req.user);
 
