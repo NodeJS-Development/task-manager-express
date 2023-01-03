@@ -4,13 +4,6 @@ const sendgridAPI = process.env.SENDGRID_API_KEY;
 
 sgMail.setApiKey(sendgridAPI);
 
-sgMail.send({
-  to: 'bgarcia.95@outlook.com',
-  from: 'bgarcia.95@outlook.com',
-  subject: 'This is my first creation!',
-  text: 'I hope this one actually get to you',
-});
-
 const sendWelcomeEmail = (email, name) => {
   sgMail.send({
     to: email,
