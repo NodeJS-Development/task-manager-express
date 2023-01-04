@@ -104,7 +104,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
 // Middlewares
 
-// fn has to be a standart fn and not arrow functions
+// fn has to be a standard fn and not arrow functions
 // Hash the plain text password before saving
 userSchema.pre('save', async function (next) {
   const user = this;
